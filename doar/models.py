@@ -6,7 +6,7 @@ from escola.models import Escola
 
 class Doar(models.Model):
     nome = models.CharField(max_length=100, verbose_name='Nome')
-    quantidade = models.IntegerField(max_length=10, verbose_name='Quantidade')
+    quantidade = models.IntegerField(verbose_name='Quantidade')
     doador = models.ManyToManyField(
         Doador,
         verbose_name='doador',
