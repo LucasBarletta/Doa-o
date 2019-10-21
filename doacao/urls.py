@@ -17,9 +17,21 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
+from escola import views
+from escola.views import EscolaViewSet
+from doador.views import DoadorViewSet
+from doar import views
+from doar.views import DoarViewSet
 
+
+router = routers.DefaultRouter()
+router.register(r'escola', EscolaViewSet)
+router.register(r'doador', DoadorViewSet)
+router.register(r'doar', DoarViewSet)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls))
+    
 ]
