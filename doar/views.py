@@ -13,6 +13,6 @@ class DoarViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['GET'])
     def disponiveis(self, request):
-        doacoes = Doar.objects.all().filters(escola__isnull=True)
+        doacoes = Doar.objects.all().filter(escola__isnull=True)
         return Response(DoarSerializer(doacoes, many=True).data)
 
