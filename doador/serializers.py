@@ -2,10 +2,10 @@ from rest_framework import serializers
 from doador.models import Doador
 
 class DoadorSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
     nome = serializers.CharField(max_length=50)
     idade = serializers.IntegerField()
     localizacao = serializers.CharField(max_length=50)
+    cpf = serializers.CharField(max_length=50)
     email = serializers.CharField(max_length=50)
     senha = serializers.CharField(max_length=255)
     
